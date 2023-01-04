@@ -1,11 +1,13 @@
-await loadScript('https://cdn.jsdelivr.net/npm/p5.glitch@latest/p5.glitch.js')
-s1.initVideo("https://media1.giphy.com/media/AcrHRET6oOqo1LTT0s/giphy.mp4")
-p1 = new P5()
-let 
-s0.init({src:p1.canvas})
-p1.draw=()=>{
-p1.background(0,0,0);
-	p1.rect()
-}
-src(s0).blend(s1).out(o0)
-render(o0)
+// licensed with CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// #genuary2023 #genuary3 #glitch
+// MDN @markdenardo
+const pi = (()=>Math.random(Math.PI)*100)
+s0.initVideo("https://media3.giphy.com/media/fvCoIEB8YtKghURZcA/giphy.mp4")
+src(s0)
+	.modulatePixelate(
+		noise(1,0,0)
+			.pixelate(pi,pi)
+			.scrollX(()=>Math.random(10))
+			.blend(s0)
+	)
+	.out(o0)
